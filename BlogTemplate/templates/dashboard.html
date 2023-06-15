@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/home-bg.jpg') }}')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>Clean Blog</h1>
+                    <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <!-- Post preview-->
+            <h2>Basic Actions</h2>
+            <a href="/edit/0"><button class="btn btn-success" style="padding: 5px;">Add Post</button></a>
+            <a href="/logout"><button class="btn btn-success" style="padding: 5px;">Log Out</button></a>
+            <hr>
+            <h2>File Uploader</h2>
+            <p>We will upload file here</p>
+            <hr>
+            <h2>Edit Post</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Sr No</th>
+                        <th>Title</th>
+                        <th>Date</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {% for po in post %}
+                    <tr>
+                        <td>{{po.sno}}</td>
+                        <td>{{po.title}}</td>
+                        <td>{{po.date}}</td>
+                        <td> <a href="/edit/{{po.sno}}"><button class="btn btn-primary"
+                                    style="padding: 5px;">Edit</button></a></td>
+                        <td><a href="/delete/{{po.sno}}"><button class="btn btn-danger"
+                                    style="padding: 5px;">Delete</button></a></td>
+                    </tr>
+
+                    {% endfor %}
+
+
+                </tbody>
+            </table>
+
+
+
+            <!-- Pager-->
+            <div class=" d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older
+                    Posts →</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

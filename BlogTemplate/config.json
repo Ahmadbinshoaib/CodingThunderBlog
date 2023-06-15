@@ -1,0 +1,16 @@
+{
+  "params":
+  {
+    "local_server" : "True",
+    "local_uri": "mysql://root:@localhost/blogs",
+    "prod_uri" : "mysql://root:@localhost/blogs",
+    "fb_url" : "https://www.tutorialspoint.com/flask/flask_http_methods.htm",
+    "blog_name": "Coding Thunder",
+    "gmail-user":"ahmadshoaib1044@gmail.com",
+    "gmail-password":"@ma.ker..1",
+    "no_of_posts": 5,
+    "admin_user": "ahmad",
+    "admin_password": "admin123"
+
+  }
+}
